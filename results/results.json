@@ -1,0 +1,244 @@
+{
+  "versions": {
+    "sklearn": "1.9.1",
+    "numpy": "2.5.3",
+    "pandas": "3.0.1"
+  },
+  "audit": {
+    "train": {
+      "rows": 31112,
+      "missing": {
+        "geological_era": 2,
+        "weather_pattern": 3,
+        "region": 4,
+        "aptitude_score": 4,
+        "performance_score": 2,
+        "stability_index": 2,
+        "personal_interest": 6,
+        "load_ratio": 2,
+        "brew_preference": 7,
+        "instrument": 3,
+        "species": 3,
+        "index_weight": 3,
+        "mineral_type": 3,
+        "activity_duration": 2,
+        "composite_rank": 1,
+        "label": 3
+      },
+      "duplicates": 0,
+      "labels": {
+        "no": 23645,
+        "yes": 7464
+      }
+    },
+    "test": {
+      "rows": 13334,
+      "missing": {
+        "geological_era": 2,
+        "weather_pattern": 0,
+        "region": 1,
+        "aptitude_score": 1,
+        "performance_score": 0,
+        "stability_index": 1,
+        "personal_interest": 1,
+        "load_ratio": 1,
+        "brew_preference": 3,
+        "instrument": 2,
+        "species": 2,
+        "index_weight": 1,
+        "mineral_type": 0,
+        "activity_duration": 1,
+        "composite_rank": 4,
+        "label": 1
+      },
+      "duplicates": 0,
+      "labels": {
+        "no": 10165,
+        "yes": 3168
+      }
+    },
+    "numeric_columns": [
+      "aptitude_score",
+      "performance_score",
+      "stability_index",
+      "load_ratio",
+      "index_weight",
+      "activity_duration",
+      "composite_rank"
+    ],
+    "categorical_columns": [
+      "geological_era",
+      "weather_pattern",
+      "region",
+      "personal_interest",
+      "brew_preference",
+      "instrument",
+      "species",
+      "mineral_type"
+    ],
+    "cross_split_duplicate_features": 0,
+    "numeric_summary": {
+      "aptitude_score": {
+        "count": 31105.0,
+        "mean": 342.13178556502174,
+        "std": 68.92620798331754,
+        "min": 90.0,
+        "25%": 310.59,
+        "50%": 333.51,
+        "75%": 402.56,
+        "max": 510.0
+      },
+      "performance_score": {
+        "count": 31107.0,
+        "mean": 296.4977410229209,
+        "std": 187.62757956040008,
+        "min": 0.0,
+        "25%": 146.57,
+        "50%": 275.39,
+        "75%": 420.175,
+        "max": 1010.0
+      },
+      "stability_index": {
+        "count": 31107.0,
+        "mean": 3.1564211913717166,
+        "std": 0.8493444416158747,
+        "min": 0.0,
+        "25%": 2.751,
+        "50%": 3.351,
+        "75%": 3.762,
+        "max": 4.625
+      },
+      "load_ratio": {
+        "count": 31107.0,
+        "mean": 24.423330665123608,
+        "std": 9.919981759850081,
+        "min": 0.0,
+        "25%": 19.272,
+        "50%": 23.689,
+        "75%": 27.657,
+        "max": 143.717
+      },
+      "index_weight": {
+        "count": 31106.0,
+        "mean": 12.721623802481835,
+        "std": 7.7472150892446905,
+        "min": 0.0,
+        "25%": 7.52,
+        "50%": 11.73,
+        "75%": 16.23,
+        "max": 99.62
+      },
+      "activity_duration": {
+        "count": 31107.0,
+        "mean": 80.36247725592311,
+        "std": 25.51417587325346,
+        "min": 0.0,
+        "25%": 72.74,
+        "50%": 80.33,
+        "75%": 90.26,
+        "max": 205.0
+      },
+      "composite_rank": {
+        "count": 31108.0,
+        "mean": 3.238774688183104,
+        "std": 0.8698083877282269,
+        "min": 0.589,
+        "25%": 2.591,
+        "50%": 3.199,
+        "75%": 3.838,
+        "max": 6.876
+      }
+    },
+    "iqr_outlier_counts": {
+      "aptitude_score": 617,
+      "performance_score": 154,
+      "stability_index": 1128,
+      "load_ratio": 2526,
+      "index_weight": 1017,
+      "activity_duration": 5347,
+      "composite_rank": 115
+    },
+    "unseen_test_categories": {
+      "geological_era": [],
+      "weather_pattern": [],
+      "region": [],
+      "personal_interest": [],
+      "brew_preference": [],
+      "instrument": [],
+      "species": [],
+      "mineral_type": []
+    }
+  },
+  "results": {
+    "Majority baseline": {
+      "accuracy": 0.7623940598514963,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": 0.5,
+      "average_precision": 0.23760594014850372,
+      "confusion_matrix": [
+        [
+          10165,
+          0
+        ],
+        [
+          3168,
+          0
+        ]
+      ]
+    },
+    "Logistic regression": {
+      "accuracy": 0.8395709892747318,
+      "balanced_accuracy": 0.7472530581267669,
+      "precision": 0.6985719799305288,
+      "recall": 0.5713383838383839,
+      "f1": 0.6285813509289807,
+      "roc_auc": 0.8888252917765953,
+      "average_precision": 0.7024708481077527,
+      "confusion_matrix": [
+        [
+          9384,
+          781
+        ],
+        [
+          1358,
+          1810
+        ]
+      ],
+      "best_params": {
+        "model__C": 10
+      },
+      "cv_average_precision": 0.7085436643707089,
+      "cv_std": 0.010828276702986389,
+      "seconds": 2.0231194496154785
+    },
+    "Random forest": {
+      "accuracy": 0.8389709742743569,
+      "balanced_accuracy": 0.7311067667575906,
+      "precision": 0.7210913815504547,
+      "recall": 0.5255681818181818,
+      "f1": 0.607997078692715,
+      "roc_auc": 0.8894814164766206,
+      "average_precision": 0.7067228611994959,
+      "confusion_matrix": [
+        [
+          9521,
+          644
+        ],
+        [
+          1503,
+          1665
+        ]
+      ],
+      "best_params": {
+        "model__max_depth": 12,
+        "model__min_samples_leaf": 2
+      },
+      "cv_average_precision": 0.7129872770279531,
+      "cv_std": 0.014521495743632595,
+      "seconds": 94.31997060775757
+    }
+  }
+}
